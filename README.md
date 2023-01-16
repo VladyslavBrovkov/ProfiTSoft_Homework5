@@ -6,3 +6,4 @@ Application details:
 * H2 user - sa
 * H2 password - password
 
+* data.sql and schema.sql files are attached in resources folder
