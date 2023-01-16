@@ -22,7 +22,6 @@ public class FilmCategoryServiceImpl implements FilmCategoryService {
     @Override
     @Transactional(readOnly = true)
     public Set<FilmCategoryInfoDto> getAllFilmCategories() {
-        System.out.println(filmCategoryRepository.findAll());
         return filmCategoryRepository.findAll().stream()
                 .sorted(Comparator.comparing(FilmCategory::getId))
                 .map(this::toDto)
