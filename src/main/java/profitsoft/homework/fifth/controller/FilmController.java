@@ -46,11 +46,9 @@ public class FilmController {
     }
 
 
-    @GetMapping("/getByPage/{page}/{size}")
-    public ResponseEntity<Page<FilmInfoDto>> getFilmsByPage(@PathVariable Integer page,
-                                                            @PathVariable Integer size,
-                                                            @Valid @RequestBody FilmSearchDto filmSearchDto) {
-        return ResponseEntity.ok(filmService.findFilmWithPagination(filmSearchDto, page, size));
+    @PostMapping("/_getByPage")
+    public ResponseEntity<Page<FilmInfoDto>> getFilmsByPage(@Valid @RequestBody FilmSearchDto filmSearchDto) {
+        return ResponseEntity.ok(filmService.findFilmWithPagination(filmSearchDto));
     }
 
     @DeleteMapping("/deleteById/{id}")

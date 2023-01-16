@@ -69,7 +69,9 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<FilmInfoDto> findFilmWithPagination(FilmSearchDto filmSearchDto, Integer page, Integer size) {
+    public Page<FilmInfoDto> findFilmWithPagination(FilmSearchDto filmSearchDto) {
+        int page = filmSearchDto.getPage();
+        int size = filmSearchDto.getSize();
         int defaultSize = 3;
         PageRequest pageRequest = PageRequest.of(page, size < 1 ? defaultSize : size);
         Page<Film> filmPage = constructFilmPage(filmSearchDto, pageRequest);

@@ -16,7 +16,7 @@ public interface FilmService {
 
     FilmInfoDto findFilmById(Integer filmId);
 
-    Page<FilmInfoDto> findFilmWithPagination(FilmSearchDto filmSearchDto, Integer page, Integer size);
+    Page<FilmInfoDto> findFilmWithPagination(FilmSearchDto filmSearchDto);
 
     Set<FilmInfoDto> getAllFilms();
 

@@ -11,6 +11,10 @@ import java.math.BigDecimal;
 @Setter
 @Builder
 public class FilmSearchDto {
+    private int page;
+
+    private int size;
+
     private String title;
 
     @DecimalMin(value = "0")

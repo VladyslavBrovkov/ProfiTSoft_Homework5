@@ -137,7 +137,7 @@ public class FilmControllerTest {
     void getFilmsWithPaginationNoParamsTest() throws Exception {
         mvc
                 .perform(
-                        get("/api/film//getByPage/0/0")
+                        post("/api/film/_getByPage")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content("{}"))
                 .andExpect(status().isOk())
@@ -154,7 +154,7 @@ public class FilmControllerTest {
                 .build();
         mvc
                 .perform(
-                        get("/api/film//getByPage/0/0")
+                        post("/api/film/_getByPage")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(filmSearchDto)))
                 .andExpect(status().isOk())
