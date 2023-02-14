@@ -14,7 +14,7 @@
     <name>ProfiTSoft_Homework5</name>
     <description>ProfiTSoft_Homework5</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>19</java.version>
     </properties>
     <dependencies>
         <dependency>
